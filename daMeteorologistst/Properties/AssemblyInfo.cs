@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("daMeteorologistst")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Generate forecast stamps to insert in HTML email")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Digital Alchemy")]
 [assembly: AssemblyProduct("daMeteorologistst")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
