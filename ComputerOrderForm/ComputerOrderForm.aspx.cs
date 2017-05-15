@@ -26,6 +26,7 @@ namespace ComputerOrderForm
       order.PartNumber = int.Parse(PartNumber.Text);
       order.Rush = RushYes.Checked;
       Session["CurrentOrder"] = order;
+      Response.Redirect("ReviewComputerOrder.aspx");
     }
   }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ComputerOrderForm.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,14 @@ namespace ComputerOrderForm
   {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+      ComputerOrder order = Session["CurrentOrder"] as ComputerOrder;
+      OrderNumber.Text = order.OrderId.ToString();
+      OrderName.Text = order.OrderName;
+      CustomerName.Text = order.CustomerName;
+      CustomerEmail.Text = order.CustomerEmail;
+      DeliveryDate.Text = order.DeliveryDate.ToShortDateString();
+      PartNumber.Text = order.PartNumber.ToString();
+      RushOrder.Text = order.Rush == true ? "Yes" : "No";
     }
   }
 }
