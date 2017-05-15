@@ -1,13 +1,33 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.6
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "daMeteorologistst", "daMeteorologistst\daMeteorologistst.csproj", "{50D5B954-3042-4750-B3E9-0BDDE0EE80E4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComputerOrderForm", "ComputerOrderForm\ComputerOrderForm.csproj", "{57375F5A-5780-4B94-B4A0-3DC45FEA321A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "daGeolocation", "daGeolocation\daGeolocation.csproj", "{772B0297-5459-406D-A77C-60196AFB82BD}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "dark-weather", "..\dark-weather\", "{C62EC81F-5FD0-4BB4-92AE-D51F18EC7970}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_57825"
+		Debug.AspNetCompiler.PhysicalPath = "..\dark-weather\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_57825\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_57825"
+		Release.AspNetCompiler.PhysicalPath = "..\dark-weather\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_57825\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "57825"
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +47,10 @@ Global
 		{772B0297-5459-406D-A77C-60196AFB82BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{772B0297-5459-406D-A77C-60196AFB82BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{772B0297-5459-406D-A77C-60196AFB82BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C62EC81F-5FD0-4BB4-92AE-D51F18EC7970}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C62EC81F-5FD0-4BB4-92AE-D51F18EC7970}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C62EC81F-5FD0-4BB4-92AE-D51F18EC7970}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{C62EC81F-5FD0-4BB4-92AE-D51F18EC7970}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
