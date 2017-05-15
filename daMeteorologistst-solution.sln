@@ -9,6 +9,27 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComputerOrderForm", "Comput
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "daGeolocation", "daGeolocation\daGeolocation.csproj", "{772B0297-5459-406D-A77C-60196AFB82BD}"
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "dark-weather(1)", "dark-weather\", "{59D006DC-87A4-494C-ACE5-2D1A255B8A77}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_3603"
+		Debug.AspNetCompiler.PhysicalPath = "dark-weather\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_3603\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_3603"
+		Release.AspNetCompiler.PhysicalPath = "dark-weather\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_3603\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "3603"
+		SlnRelativePath = "dark-weather\"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +48,10 @@ Global
 		{772B0297-5459-406D-A77C-60196AFB82BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{772B0297-5459-406D-A77C-60196AFB82BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{772B0297-5459-406D-A77C-60196AFB82BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59D006DC-87A4-494C-ACE5-2D1A255B8A77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59D006DC-87A4-494C-ACE5-2D1A255B8A77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59D006DC-87A4-494C-ACE5-2D1A255B8A77}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{59D006DC-87A4-494C-ACE5-2D1A255B8A77}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
