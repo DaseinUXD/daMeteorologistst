@@ -3,26 +3,26 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
   <div style="width: 800px; margin-left: auto; margin-right: auto;">
-    <h1>Stamp Builder</h1>
+    <h1>Stamp Builder</h1>,
     <hr />
     <div class="row">
       <div class="col-lg-6">
         <h2>Property Settings</h2>
         <div class="form-group">
-          <label for="exampleInputName2">Property</label>
-          <input type="text" class="form-control" id="2" placeholder="Kiawah Golf Resort">
+          <label for="propName">Property</label>
+          <input type="text" class="form-control" id="propName" placeholder="">
         </div>
         <div class="form-group">
-          <label for="exampleInputEmail2">FTP Box</label>
-          <input type="text" class="form-control" id="" placeholder="00019">
+          <label for="propFTP">FTP Box</label>
+          <input type="text" class="form-control" id="propFTP" placeholder="00019">
         </div>
         <div class="form-group">
-          <label for="exampleInputName2">City</label>
-          <input type="text" class="form-control" id="" placeholder="">
+          <label for="propCity">City</label>
+          <input type="text" class="form-control" id="propCity" placeholder="">
         </div>
                 <div class="form-group">
-          <label for="sel1">State:</label>
-          <select class="form-control" id="sel1">
+          <label for="propState">State:</label>
+          <select class="form-control" id="propState">
             <option>TN</option>
             <option>TX</option>
             <option>3</option>
@@ -31,10 +31,11 @@
         </div>
 
         <div class="form-group">
-          <label for="exampleInputEmail2">ZipCode</label>
-          <input type="text" class="form-control" id="" placeholder="">
+          <label for="propZip">ZipCode</label>
+          <input type="text" class="form-control" id="propZip" placeholder="">
         </div>
       </div>
+      <!-- Stamp Settings -->
       <div class="col-lg-6">
         <h2>Stamp Settings</h2>
         <div class="form-group">

@@ -120,6 +120,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Modules\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
@@ -146,6 +147,11 @@
     <Content Include="node_modules\bootstrap-colorpicker\dist\img\bootstrap-colorpicker\saturation.png" />
     <Content Include="node_modules\bootstrap-colorpicker\dist\js\bootstrap-colorpicker.js" />
     <Content Include="node_modules\bootstrap-colorpicker\dist\js\bootstrap-colorpicker.min.js" />
+    <Content Include="node_modules\jquery\dist\core.js" />
+    <Content Include="node_modules\jquery\dist\jquery.js" />
+    <Content Include="node_modules\jquery\dist\jquery.min.js" />
+    <Content Include="node_modules\jquery\dist\jquery.slim.js" />
+    <Content Include="node_modules\jquery\dist\jquery.slim.min.js" />
     <Content Include="Scripts\bootstrap-datetimepicker.js" />
     <Content Include="Scripts\bootstrap-datetimepicker.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
@@ -191,6 +197,8 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="package.json" />
+    <Content Include="node_modules\jquery\dist\jquery.min.map" />
+    <Content Include="node_modules\jquery\dist\jquery.slim.min.map" />
     <None Include="Project_Readme.html" />
     <Content Include="Site.Mobile.Master" />
     <None Include="Web.Debug.config">
