@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DarkSky Weather</title>
+
+</head>
+<body>
+<div style="width:600px; position:relative; left:auto; top:50px;  border-width:0; margin-left:auto;margin-right:auto">
+    <table align="center" border-collapse="collapse" border="0" cellspacing="0" cellpadding="0" style="max-width:600px; width:100%;padding:0px !important;">
+        <tr style="width:600px">
+            <td valign="top" style="padding:0 !important;">
+                <table style="width:100%;padding:0 !important;" align="center" border="0" cellspacing="0" cellpadding="0">
+                    <thead style="background-color:#51565F;color:white;">
+                    <tr style="height:40px; font-family:Roboto, Arial, sans-serif; font-variant:normal; font-weight:600;color:#2e2e2e;line-height:1em">
+                        <td colspan="6" style="letter-spacing:initial;">
+                            <span id="locCityState" style="position:relative;left:.7em;top:.5em;font-size:2em;">Fort Worth, Texas</span>
+                            <span id="locZip" style="position:relative;left:.7em;top:.5em;font-size:2em;"></span>
+                        </td>
+                    </tr>
+
+
+                    <tr style="margin:0;font-family:Roboto, Arial, sans-serif; font-weight:300;max-width:600px;height:140px;">
+                        <td valign="bottom" colspan="3" style="max-width:300px;">
+                            <!--current temperature-->
+                            <span id="currentTemp" style="position:relative; left:0.2em;font-size:8em;font-weight:700;clear:both;display:inline;"></span>
+                            <!--current weather icon-->
+                            <span style="position:relative; top:.5em; left:0.5em; clear:both; display:inline;">
+                                <img width="90" height="90" id="pic0" />
+                            </span>
+                        </td>
+                        <td valign="bottom" colspan="3" style="max-width:400px;font-size:2em;letter-spacing:0.09em;text-align:right;">
+                            <span id="day0Day" style="position:relative; right:5%; display:block;line-height:3.5em;"></span>
+                            <span id="day0Date" style="position:relative; right:5%; bottom:0.9em; display:block;"></span>
+                        </td>
+
+                    </tr>
+                    </tr>
+                    </thead>
+                    <tbody style="background-color:#33343a;color:snow;">
+                    <tr valign="bottom" style="font-family:Roboto, Arial, sans-serif;text-align:center;height:80px;">
+                        <td valign="bottom" style="width:100px"><img width="50" height="50" id="pic00"></td>
+                        <td valign="bottom" style="width:100px"><img width="50" height="50" id="pic1"></td>
+                        <td valign="bottom" style="width:100px"><img width="50" height="50" id="pic2"></td>
+                        <td valign="bottom" style="width:100px"><img width="50" height="50" id="pic3"></td>
+                        <td valign="bottom" style="width:100px"><img width="50" height="50" id="pic4"></td>
+                        <td valign="bottom" style="width:100px"><img width="50" height="50" id="pic5"></td>
+                    </tr>
+                    <tr valign="top" style="font-family:Roboto, Arial, sans-serif;text-align:center;font-size:2em;font-weight:700;line-height:1em;height:50px;">
+                        <td id="hiTemp0" valign="middle" style="width:100px"></td>
+                        <td id="hiTemp1" valign="middle" style="width:100px"></td>
+                        <td id="hiTemp2" valign="middle" style="width:100px"></td>
+                        <td id="hiTemp3" valign="middle" style="width:100px"></td>
+                        <td id="hiTemp4" valign="middle" style="width:100px"></td>
+                        <td id="hiTemp5" valign="middle" style="width:100px"></td>
+                    </tr>
+                    <tr valign="top" style="font-family:Roboto, Arial, sans-serif;text-transform:uppercase; text-align:center;color:#808080; font-size:2em;font-weight:500;height:50px;">
+                        <td id="day00" valign="top" style="width:100px"></td>
+                        <td id="day1" valign="top" style="width:100px"></td>
+                        <td id="day2" valign="top" style="width:100px"></td>
+                        <td id="day3" valign="top" style="width:100px"></td>
+                        <td id="day4" valign="top" style="width:100px"></td>
+                        <td id="day5" valign="top" style="width:100px"></td>
+                    </tr>
+
+                    </tbody>
+
+                </table>
+            </td>
+        </tr>
+    </table>
+</div>
+<!-- moment.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js"></script>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+<!--<script src="forecast.js"></script>-->
+<!--<script src="icons.js"></script>-->
+
+<script>
+    /**
+     * Created by daseinuxd on 5/9/2017.
+     */
+    var propLocation = new XMLHttpRequest();
+    var propLocObj;
+    var propZip = 76137;
+
+    var weatherForecast = new XMLHttpRequest();
+    var apiKey = '0ab072376462dd056d5a7f08c9c344a6';
+    var fObj;
+
+
+    propLocation.open('GET', 'http://ziplocate.us/api/v1/' + propZip);
+    propLocation.responseType = 'text';
+    propLocation.send(null);
+
+    propLocation.onload = function () {
+        if (propLocation.status === 200) {
+            var propLocObj = JSON.parse(propLocation.responseText);
+            console.log(propLocObj);
+            document.getElementById('locZip').innerHTML = propZip;
+
+            var latitude = propLocObj.lat;
+            var longitude = propLocObj.lng;
+
+            console.log(latitude, longitude);
+
+            weatherForecast.open('GET', 'https://api.darksky.net/forecast/' + apiKey + '/' + latitude + ',' + longitude, true);
+            weatherForecast.responseType = 'text';
+            weatherForecast.send(null);
+
+
+            weatherForecast.onload = function () {
+
+                if (weatherForecast.status === 200)
+                {
+                    var fObj = JSON.parse(weatherForecast.responseText);
+                    console.log(fObj);
+                    //document.getElementById('location').innerHTML = fObj.location.name + ", " + fObj.location.region + " " + zipCode;
+                    //document.getElementById('desc0').innerHTML = fObj.current.condition.text;
+                    //document.getElementById('feels').innerHTML = Math.round(fObj.current.feelslike_f) + "&deg;";
+                    //document.getElementById('humid').innerHTML = fObj.current.humidity+ "%";
+                    //document.getElementById('wind-dir').innerHTML = fObj.current.wind_dir;
+                    //document.getElementById('wind-mph').innerHTML = fObj.current.wind_mph;
+
+
+                    // Day 0
+                    document.getElementById('day0Day').innerHTML = moment.unix(fObj.currently.time).format('dddd');
+                    document.getElementById('day0Date').innerHTML = moment.unix(fObj.currently.time).format('ll');
+                    document.getElementById('currentTemp').innerHTML = Math.round(fObj.currently.temperature) + "&deg;";
+                    getIcon(fObj.currently.icon, 'pic0');
+
+
+                    document.getElementById('day00').innerHTML = moment.unix(fObj.daily.data[0].time).format('ddd');
+                    getIcon(fObj.daily.data[0].icon, 'pic00');
+                    document.getElementById('hiTemp0').innerHTML = Math.round(fObj.daily.data[0].temperatureMax) + "&deg;";
+                    //document.getElementById('loTemp0').innerHTML = Math.round(fObj.forecast.forecastday[0].day.mintemp_f) + "&deg;";
+
+                    // Day 1
+                    document.getElementById('day1').innerHTML = moment.unix(fObj.daily.data[1].time).format('ddd');
+                    getIcon(fObj.daily.data[1].icon, 'pic1');
+                    document.getElementById('hiTemp1').innerHTML = Math.round(fObj.daily.data[1].temperatureMax) + "&deg;";
+                    //document.getElementById('loTemp1').innerHTML = Math.round(fObj.forecast.forecastday[1].day.mintemp_f) + "&deg;";
+
+                    // Day 2
+                    document.getElementById('day2').innerHTML = moment.unix(fObj.daily.data[2].time).format('ddd');
+                    getIcon(fObj.daily.data[2].icon, 'pic2');
+                    document.getElementById('hiTemp2').innerHTML = Math.round(fObj.daily.data[2].temperatureMax) + "&deg;";
+                    //document.getElementById('loTemp2').innerHTML = Math.round(fObj.forecast.forecastday[2].day.mintemp_f) + "&deg;";
+
+                    // Day 3
+                    document.getElementById('day3').innerHTML = moment.unix(fObj.daily.data[3].time).format('ddd');
+                    getIcon(fObj.daily.data[3].icon, 'pic3');
+                    document.getElementById('hiTemp3').innerHTML = Math.round(fObj.daily.data[3].temperatureMax) + "&deg;";
+                    //document.getElementById('loTemp3').innerHTML = Math.round(fObj.forecast.forecastday[3].day.mintemp_f) + "&deg;";
+
+                    // Day 4
+                    document.getElementById('day4').innerHTML = moment.unix(fObj.daily.data[4].time).format('ddd');
+                    getIcon(fObj.daily.data[4].icon, 'pic4');
+                    document.getElementById('hiTemp4').innerHTML = Math.round(fObj.daily.data[4].temperatureMax) + "&deg;";
+                    //document.getElementById('loTemp4').innerHTML = Math.round(fObj.forecast.forecastday[4].day.mintemp_f) + "&deg;";
+
+                    // Day 5
+                    document.getElementById('day5').innerHTML = moment.unix(fObj.daily.data[5].time).format('ddd');
+                    getIcon(fObj.daily.data[5].icon, 'pic5');
+                    document.getElementById('hiTemp5').innerHTML = Math.round(fObj.daily.data[5].temperatureMax) + "&deg;";
+                    // document.getElementById('loTemp5').innerHTML = Math.round(fObj.forecast.forecastday[5].day.mintemp_f) + "&deg;";
+
+                } else {
+                    console.log('Error loading from Dark Sky API');
+                };// end if-else
+            }; // end weather forecast function
+        } else {
+            console.log('Error loading from Location API');
+        }; // end if-else
+    }; // end location function
+    /**
+     * Created by daseinuxd on 5/9/2017.
+     */
+    function getIcon (iconDesc, picNo) {
+
+        switch (iconDesc) {
+            case 'clear-day':
+                document.getElementById(picNo).src = 'icons-white/clear-day.svg';
+                break;
+            case 'clear-night':
+                document.getElementById(picNo).src = 'icons-white/clear-night.svg';
+                break;
+            case 'cloudy':
+                document.getElementById(picNo).src = 'icons-white/cloudy.svg';
+                break;
+            case 'fog':
+                document.getElementById(picNo).src = 'icons-white/fog.svg';
+                break;
+            case 'hail':
+                document.getElementById(picNo).src = 'icons-white/hail.svg';
+                break;
+            case 'partly-cloudy-day':
+                document.getElementById(picNo).src = 'icons-white/partly-cloudy-day.svg';
+                break;
+            case 'partly-cloudy-night':
+                document.getElementById(picNo).src = 'icons-white/partly-cloudy-night.svg';
+                break;
+            case 'rain':
+                document.getElementById(picNo).src = 'icons-white/rain.svg';
+                break;
+            case 'sleet':
+                document.getElementById(picNo).src = 'icons-white/sleet.svg';
+                break;
+            case 'snow':
+                document.getElementById(picNo).src = 'icons-white/snow.svg';
+                break;
+            case 'thunderstorm':
+                document.getElementById(picNo).src = 'icons-white/thunderstorm.svg';
+                break;
+            case 'tornado':
+                document.getElementById(picNo).src = 'icons-white/tornado.svg';
+                break;
+            case 'wind':
+                document.getElementById(picNo).src = 'icons-white/wind.svg';
+        };
+    };
+</script>
+
+</body>
+</html>
