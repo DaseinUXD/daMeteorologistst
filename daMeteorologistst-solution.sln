@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "daMeteorologistst", "daMeteorologistst\daMeteorologistst.csproj", "{50D5B954-3042-4750-B3E9-0BDDE0EE80E4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "daMeteorologistst_OLD", "daMeteorologistst\daMeteorologistst_OLD.csproj", "{50D5B954-3042-4750-B3E9-0BDDE0EE80E4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComputerOrderForm", "ComputerOrderForm\ComputerOrderForm.csproj", "{57375F5A-5780-4B94-B4A0-3DC45FEA321A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "daGeolocation", "daGeolocation\daGeolocation.csproj", "{772B0297-5459-406D-A77C-60196AFB82BD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "daGeolocation_OLD", "daGeolocation\daGeolocation_OLD.csproj", "{772B0297-5459-406D-A77C-60196AFB82BD}"
 EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "dark-weather(1)", "dark-weather\", "{59D006DC-87A4-494C-ACE5-2D1A255B8A77}"
 	ProjectSection(WebsiteProperties) = preProject

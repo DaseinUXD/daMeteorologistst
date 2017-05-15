@@ -7,8 +7,8 @@ namespace daGeolocation.Models
 {
   public class Location
   {
-    public float lat { get; set; }
-    public float lng { get; set; }
+    public string lat { get; set; }
+    public string lng { get; set; }
     public string zip { get; set; }
   }
 }
