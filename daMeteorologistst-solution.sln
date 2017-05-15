@@ -27,6 +27,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "dark-weather", "..\dark-wea
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "57825"
+		SlnRelativePath = "..\dark-weather\"
 	EndProjectSection
 EndProject
 Global
