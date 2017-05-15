@@ -10,9 +10,11 @@
     <form id="form1" runat="server">
         <div>
           <h1>Get Geolocation Data</h1>
-          <asp:Label ID="zipLabel" runat="server" Text="Enter Zip Code: "></asp:Label>
 
+          <asp:Label ID="zipLabel" runat="server" Text="Enter Zip Code: "></asp:Label>
           <asp:TextBox ID="zipCode" runat="server"></asp:TextBox>
+          <br />
+          <br />
           <br />
 
         </div>

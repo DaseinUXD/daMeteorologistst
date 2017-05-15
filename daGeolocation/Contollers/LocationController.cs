@@ -10,9 +10,10 @@ namespace daGeolocation.Contollers
 {
   public class LocationController : ApiController
   {
-    public IEnumerable<Location>  
-    {
-      var latitude = Location;
-    }
+    //GET api/values
+    //public IEnumerable<Location> Get()
+    //{
+      
+    //}
   }
 }

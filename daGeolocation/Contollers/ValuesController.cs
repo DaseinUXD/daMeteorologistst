@@ -1,40 +1,49 @@
-﻿using System;
+﻿using daGeolocation.Models;
+using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace jsonConsumeTest.Controllers
+namespace daGeolocation.Controllers
 {
-    [Authorize]
-    public class ValuesController : ApiController
+
+  public class ValuesController : ApiController
+  {
+    private static string _address = "http://ziplocate.us/api/v1/";
+    // GET api/values
+    public static async void GetLocation()
     {
-        // GET api/values
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
+      HttpClient location = new HttpClient();
+      HttpResponseMessage response = await location.GetAsync(_address);
+      JArray locations = await response.Content.ReadAsAsync<JArray>();
 
-        // GET api/values/5
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // POST api/values
-        public void Post([FromBody]string value)
-        {
-        }
-
-        // PUT api/values/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE api/values/5
-        public void Delete(int id)
-        {
-        }
+      Console.WriteLine(locations);
     }
+
+    
+
+    // GET api/values/5
+    public Location Get(int id)
+    {
+      return "value";
+    }
+
+    // POST api/values
+    public void Post([FromBody]string value)
+    {
+    }
+
+    // PUT api/values/5
+    public void Put(int id, [FromBody]string value)
+    {
+    }
+
+    // DELETE api/values/5
+    public void Delete(int id)
+    {
+    }
+  }
 }
